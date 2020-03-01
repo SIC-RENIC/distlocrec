@@ -11,7 +11,7 @@ extern void calculoP(int);
 
 
 const double RT=6371008.8;
-const int NumHilos=8;
+int NumHilos;
 const int cantidadTiposOC=CANT_TIPOS_OC;
 
 PLocalidad ploc;
@@ -40,20 +40,30 @@ int main(int cargs, char **args){
 
   if(cargs<5){
     fprintf(stderr, "No estan completos los parámetros:\n" );
-    fprintf(stderr, "\ndistlocrec.exe CantiLocs CantiRecs ArchivoLoc ArchivoRec\n\n" );
+    fprintf(stderr, "\ndistlocrec.exe CantiLocs CantiRecs ArchivoLoc ArchivoRec [NumHilos]\n\n" );
     fprintf(stderr, "\t CantiLocs:\tCantidad de localidades\n" );
     fprintf(stderr, "\t CantiRecs:\tCantidad de recursos\n" );
     fprintf(stderr, "\t ArchivoLoc:\tArchivo de localidades\n");
     fprintf(stderr, "\t ArchivoRec:\tArchivo de recursos\n");
+    fprintf(stderr, "\t NumHilos:\tCantidad de hilos\n");
     return 1;
   }
 
-  childPids = (pid_t*) malloc(NumHilos * sizeof(pid_t));
+  
 
   cantiloc=atoi(*(args+1));
   cantirec=atoi(*(args+2));
   char * archlocs=*(args+3);
   char * archrecs=*(args+4);
+  if(cargs>5){
+    NumHilos = atoi(*args+5);
+  }else{
+    NumHilos = NUMHILOS;
+  }
+
+
+  childPids = (pid_t*) malloc(NumHilos * sizeof(pid_t));
+
 
   pdic = (PDiccionario)malloc(sizeof(sDiccionario)*cantidadTiposOC);
 

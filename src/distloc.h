@@ -13,6 +13,7 @@
 #define __DISTLOC_H__
 
 #define CANT_TIPOS_OC 24
+#define NUMHILOS 8
 
 //Definicion de la estructura de Localidad
 struct Localidad{

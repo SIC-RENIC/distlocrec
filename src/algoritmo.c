@@ -12,7 +12,7 @@ extern PRecurso prec;
 extern int cantiloc;
 extern int cantirec;
 
-extern const int NumHilos;
+extern int NumHilos;
 extern const double RT;
 
 
