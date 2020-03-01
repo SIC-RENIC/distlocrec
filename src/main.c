@@ -56,7 +56,7 @@ int main(int cargs, char **args){
   char * archlocs=*(args+3);
   char * archrecs=*(args+4);
   if(cargs>5){
-    NumHilos = atoi(*args+5);
+    NumHilos = atoi(*(args+5));
   }else{
     NumHilos = NUMHILOS;
   }
