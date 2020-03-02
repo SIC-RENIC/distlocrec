@@ -67,6 +67,7 @@ void cargaArchivoLocs(char * archlocs){
 
     for(j=0;j<cantidadTiposOC;j++){
       p->dist[j]=M_PI;
+      p->ids[j]=0;
     }
 
     i++;

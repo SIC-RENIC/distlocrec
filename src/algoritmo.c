@@ -33,7 +33,10 @@ void calculoP(int pos){
       daux=distLocRec(ploc+j,prec+i);
 
       if((ploc+j)->dist[(prec+i)->tipo]>daux){
+        
         (ploc+j)->dist[(prec+i)->tipo]=daux;
+        (ploc+j)->ids[(prec+i)->tipo]=(prec+i)->id;
+
         (ploc+j)->c[(prec+i)->tipo]=(prec+i)->cconapo;
       }
 

@@ -35,6 +35,9 @@ struct Localidad{
   //distancias mínimas a recursos
   double dist[CANT_TIPOS_OC];
 
+  //ids de recursos minimas distancias
+  int ids[CANT_TIPOS_OC];
+
   //claves conapo a las localidades de los recursos
   int c[CANT_TIPOS_OC];
 };
