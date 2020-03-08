@@ -36,7 +36,7 @@ void calculoP(int pos){
         
         (ploc+j)->dist[(prec+i)->tipo]=daux;
         
-        (ploc+j)->c[(prec+i)->tipo]=((prec+i)->est*1000+(prec+i)->mun)*10000+(prec+i)->loc; //(prec+i)->cconapo;
+        (ploc+j)->c[(prec+i)->tipo]=(prec+i)->cconapo;
 
         (ploc+j)->ids[(prec+i)->tipo]=(prec+i)->id;
       }
