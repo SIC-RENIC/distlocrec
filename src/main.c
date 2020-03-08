@@ -11,7 +11,7 @@ extern void calculoP(int);
 
 
 const double RT=6371008.8;
-int NumHilos;
+const int NumHilos=NUMHILOS;
 const int cantidadTiposOC=CANT_TIPOS_OC;
 
 PLocalidad ploc;
@@ -55,11 +55,12 @@ int main(int cargs, char **args){
   cantirec=atoi(*(args+2));
   char * archlocs=*(args+3);
   char * archrecs=*(args+4);
+  /*
   if(cargs>5){
     NumHilos = atoi(*(args+5));
   }else{
     NumHilos = NUMHILOS;
-  }
+  }*/
 
 
   childPids = (pid_t*) malloc(NumHilos * sizeof(pid_t));

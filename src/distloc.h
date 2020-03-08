@@ -40,6 +40,10 @@ struct Localidad{
 
   //claves conapo a las localidades de los recursos
   int c[CANT_TIPOS_OC];
+
+  int otro1[CANT_TIPOS_OC];
+  int otro2[CANT_TIPOS_OC];
+  int otro3[CANT_TIPOS_OC];
 };
 
 typedef struct Localidad sLocalidad;
@@ -59,7 +63,7 @@ struct Recurso{
   double y;
   double z;
 
-  char stipo[22];
+  char stipo[CANT_TIPOS_OC];
   int tipo;
 
   int id;

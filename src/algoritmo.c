@@ -12,7 +12,7 @@ extern PRecurso prec;
 extern int cantiloc;
 extern int cantirec;
 
-extern int NumHilos;
+extern const int NumHilos;
 extern const double RT;
 
 
@@ -35,9 +35,10 @@ void calculoP(int pos){
       if((ploc+j)->dist[(prec+i)->tipo]>daux){
         
         (ploc+j)->dist[(prec+i)->tipo]=daux;
-        (ploc+j)->ids[(prec+i)->tipo]=(prec+i)->id;
+        
+        (ploc+j)->c[(prec+i)->tipo]=((prec+i)->est*1000+(prec+i)->mun)*10000+(prec+i)->loc; //(prec+i)->cconapo;
 
-        (ploc+j)->c[(prec+i)->tipo]=(prec+i)->cconapo;
+        (ploc+j)->ids[(prec+i)->tipo]=(prec+i)->id;
       }
 
     }
@@ -50,7 +51,10 @@ void calculoP(int pos){
 double distLocRec(PLocalidad p, PRecurso r){
   double d=(p->x*r->x);
   d+=(p->y*r->y);
-  d+=(p->z * r->z);
+  d+=(p->z*r->z);
+
+  d=(d<-1.0)?-1.0:d;
+  d=(d>1.0)?1.0:d;
 
   return acos(d);
 

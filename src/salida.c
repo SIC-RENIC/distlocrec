@@ -27,6 +27,9 @@ void escribeSalida(void){
       e=(int)(p->c[j]/10000000);
       m=(int)((p->c[j]-e*10000000)/10000);
       l=p->c[j]-e*10000000-m*10000;
+      if(p->est > 32){
+        printf("Error: %d %d %d\n",i,p->est,p->cconapo);
+      }
       fprintf(fh,"%d,%d,%d,%s,%d,%lf,%d,%d,%d,%d\n",
       p->est,p->mun,p->loc,(pdic+j)->nombre,p->pob,RT*p->dist[j],e,m,l,p->ids[j]);
     }
